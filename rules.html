@@ -25,22 +25,33 @@
 <body class="bg-gradient-to-br from-green-50 via-yellow-50 to-white text-gray-800">
 
   <!-- Navigation Ribbon -->
-  <nav class="bg-yellow-400 nav-ribbon px-4 py-3 shadow-md text-base uppercase text-white font">
+<nav class="bg-yellow-400 nav-ribbon px-4 py-3 shadow-md text-base uppercase text-white font" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html"><img src="./Pictures/Logo.png" alt="MYO Logo" class="h-12 md:h-14"></a>
-      <div class="flex gap-6">
-        <a href="index.html" class="hover:text-black">Welcome</a>
-        <a href="about.html" class="hover:text-black">About Us</a>
-        <a href="location.html" class="hover:text-black">Location</a>
-        <a href="register.html" class="hover:text-black">Register</a>
-        <a href="rules.html" class="text-black">Rules</a>
-        <a href="support.html" class="hover:text-black">Support</a>
-        <a href="contact.html" class="hover:text-black">Contact</a>
-        <a href="uncle-qasem.html" class="hover:text-black">Uncle Qasem</a>
-      </div>
+      <a href="index.html">
+        <img src="./Pictures/Logo.png" alt="MYO Logo" class="h-12 md:h-14">
+      </a>
+  
+      <!-- Hamburger Menu -->
+      <button @click="open = !open" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Navigation Links -->
+    <div :class="open ? 'block' : 'hidden'" class="md:flex md:items-center md:justify-center md:gap-6 mt-4 md:mt-0">
+      <a href="index.html" class="block px-4 py-2 hover:text-black">Welcome</a>
+      <a href="about.html" class="block px-4 py-2 hover:text-black">About Us</a>
+      <a href="location.html" class="block px-4 py-2 hover:text-black">Location</a>
+      <a href="register.html" class="block px-4 py-2 hover:text-black">Register</a>
+      <a href="rules.html" class="block px-4 py-2 hover:text-black">Rules</a>
+      <a href="support.html" class="block px-4 py-2 hover:text-black">Support</a>
+      <a href="contact.html" class="block px-4 py-2 hover:text-black">Contact</a>
+      <a href="uncle-qasem.html" class="block px-4 py-2 hover:text-black">Uncle Qasem</a>
     </div>
   </nav>
-
   <!-- Hero Section -->
   <section class="bg-green-700 py-16 text-white text-center">
     <h1 class="text-5xl font-bold tracking-wide camp-heading">Rules</h1>
